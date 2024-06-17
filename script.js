@@ -18,7 +18,7 @@ async function checkWeather(city) {
     response.json()
   );
 
-  if(weather_data.cod==='404'){
+  if(weather_data.cod ==='404'){
     locationmot.style.display = "flex";
     weather_body.style.display = "none"
     body.style.backgroundColor="black"
@@ -34,42 +34,56 @@ async function checkWeather(city) {
   
   switch (weather_data.weather[0].main) {
     case "Clouds":
+      locationmot.style.display = "none";
+       weather_body.style.display = "flex"
       weather_img.src = "./assets/cloud.png";
       body.style.backgroundImage = `url(./assets/cloudyback.jpg)`;
       audio.src = "./assets/wind.mp3"
       break;
     case "Clear":
+      locationmot.style.display = "none";
+      weather_body.style.display = "flex"
       body.style.backgroundImage = `url(./assets/cloudback.jpg)`;
       audio.src = "./assets/forest_birds.mp3"
       weather_img.src = "./assets/clear.png";
       break;
     case "Rain":
+      locationmot.style.display = "none";
+      weather_body.style.display = "flex";
       body.style.backgroundImage = `url(./assets/rainback.jpg)`;
       audio.src = "./assets/raining.mp3"
       weather_img.src = "./assets/rain.png";
       break;
     case "Mist":
+      locationmot.style.display = "none";
+      weather_body.style.display = "flex"
        body.style.backgroundImage = `url(./assets/mistback.jpg)`;
       audio.src = "./assets/wind.mp3"
       weather_img.src = "./assets/mist.png";
       break;
     case "Snow":
+      locationmot.style.display = "none";
+      weather_body.style.display = "flex"
        body.style.backgroundImage = `url(./assets/snowback.jpg)`;
       audio.src = "./assets/snow.mp3"
       weather_img.src = "./assets/snow.png";
       break;
     case "Haze":
+      locationmot.style.display = "none";
+      weather_body.style.display = "flex"
       body.style.backgroundImage = `url(./assets/haze.jpg)`;
       audio.src = "./assets/wind.mp3"
       weather_img.src = "./assets/hazeicon.png";
       break;
     case "Thunderstorm":
+      locationmot.style.display = "none";
+      weather_body.style.display = "flex"
         body.style.backgroundImage = `url(./assets/thunder.jpg)`;
         audio.src = "./assets/thunderstorm.mp3"
         weather_img.src = "./assets/thundericon.png";
         break;
   }
-  console.log(weather_data.weather[0])
+  console.log(weather_data.cod)
 }
 
 searchBtn.addEventListener("click", () => {
